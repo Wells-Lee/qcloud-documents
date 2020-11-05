@@ -1,4 +1,4 @@
-TSF 从1.23.0版本开始支持 RocketMQ 使用联路追踪能力。
+TSF 从1.23.0版本开始支持 RocketMQ 使用链路追踪能力。
 
 ## 链路追踪原理
 利用 springboot 提供自动配置原理，加入一个能插手 bean DefaultMQProducer、和 bean DefaultMQPushConsumer 创建过程的自动配置类。使用代理来增强 DefaultMQProducer/DefaultMQPushConsumer，在调用相应方法是加入 tracing 的逻辑，在方法结束时将 tracing 数据搜集起来，统一存储。最后分析展示给前端页面。
